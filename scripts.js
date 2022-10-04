@@ -1,29 +1,21 @@
 const board = document.querySelector(".board");
 
-for (i = 1; i <= 32; i++) {
+for (i = 0; i < board.clientWidth/5; i++) {
     let row = document.createElement("div");
-    row.style.cssText = "background-color: black; display:flex; flex-direction: column; flex:1;";
+    row.style.cssText = "background-color: black; display:flex; flex-direction: column;"
     board.appendChild(row);
-    for(j = 1; j <= 32; j++) {
+    for(j = 0; j < board.clientWidth/5; j++) {
         let square = document.createElement("div");
         square.classList.add("square");
-        square.style.cssText = "width:5px; height: 5px;";
+        square.style.cssText = "width: 5px; height: 5px;";
         row.appendChild(square);
     }
 }
 
 function changeBoardSize(size) {
-    for (i = 1; i <= size; i++) {
-        let row = document.createElement("div");
-        row.style.cssText = "background-color: white; display:flex; flex-direction: column; flex:1;";
-        board.appendChild(row);
-        for(j = 1; j <= size; j++) {
-            let square = document.createElement("div");
-            square.classList.add("square");
-            square.style.cssText = "width:5px; height: 5px;"
-            row.appendChild(square)
-        }
-    }    
+    board.style.height = `${size}px`;
+    board.style.width = `${size}px`;
+    return ;
 }
 
 function randomColor () {
@@ -31,7 +23,14 @@ function randomColor () {
     return "#" + color;
 }
 
-toColor = document.querySelectorAll(".square");
+let gameSize = document.querySelectorAll(".game-size");
+
+gameSize.forEach(gameSize => {
+    
+})
+
+
+let toColor = document.querySelectorAll(".square");
 toColor.forEach(toColor => {
     toColor.addEventListener("mouseover", () => {
         toColor.style.cssText = `width: 5px; height: 5px; background-color: ${randomColor()};`

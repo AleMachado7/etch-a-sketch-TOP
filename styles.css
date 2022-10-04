@@ -63,9 +63,10 @@ button {
 
 .board {
     display: flex;
-    border: 3px;
+    border: 1px;
     border-style: solid;
     border-color: rgb(255, 255, 255);
-    justify-content: center;
-    flex-grow: 1;
+    height: 500px;
+    width: 500px;
+    flex-wrap: wrap;
 }
