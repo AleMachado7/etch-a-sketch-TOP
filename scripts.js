@@ -1,13 +1,13 @@
 const board = document.querySelector(".board");
 
-for (i = 0; i < board.clientWidth/5; i++) {
+for (i = 0; i < board.clientHeight/5; i++) {
     let row = document.createElement("div");
     row.style.cssText = "background-color: black; display:flex; flex-direction: column;"
     board.appendChild(row);
-    for(j = 0; j < board.clientWidth/5; j++) {
+    for(j = 0; j < board.clientWidth/5; j+=5) {
         let square = document.createElement("div");
         square.classList.add("square");
-        square.style.cssText = "width: 5px; height: 5px;";
+        square.style.cssText = "width: 10px; height: 10px;";
         row.appendChild(square);
     }
 }
@@ -33,6 +33,6 @@ gameSize.forEach(gameSize => {
 let toColor = document.querySelectorAll(".square");
 toColor.forEach(toColor => {
     toColor.addEventListener("mouseover", () => {
-        toColor.style.cssText = `width: 5px; height: 5px; background-color: ${randomColor()};`
+        toColor.style.backgroundColor = `${randomColor()};`
     })
 })
