@@ -1,4 +1,5 @@
 * {
+    box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
     color: white;
 }
@@ -68,5 +69,5 @@ button {
     border-color: rgb(255, 255, 255);
     height: 500px;
     width: 500px;
-    flex-wrap: wrap;
+    overflow: hidden;
 }
