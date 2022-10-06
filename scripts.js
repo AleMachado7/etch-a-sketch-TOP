@@ -45,10 +45,10 @@ squareSize.forEach(squareSize => {
     })
 })
 
+
 // set square drawing color
 function drawingColor(color) {
     let toColor = document.querySelectorAll(".square");
-
     if (color === "random") {      
         toColor.forEach(toColor => {
             toColor.addEventListener("mouseover", () => {
@@ -56,7 +56,6 @@ function drawingColor(color) {
             })
         })  
     }
-
     toColor.forEach(toColor => {
         toColor.addEventListener("mouseover", () => {
             toColor.style.backgroundColor = color;
@@ -64,3 +63,11 @@ function drawingColor(color) {
     })
 }
 
+
+// change square color
+let squareColor = document.querySelectorAll(".color");
+squareColor.forEach(squareColor => {
+    squareColor.addEventListener("click", () => {
+        drawingColor(squareColor.value)
+    })
+})
